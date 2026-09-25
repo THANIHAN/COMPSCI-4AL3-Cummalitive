@@ -1,0 +1,112 @@
+\documentclass[12pt]{article}
+
+% ---- Formatting per assignment instructions ----
+% Times New Roman, 12pt, 0.8" margins, 1.5 line spacing, 2-3 pages
+\usepackage[margin=0.8in]{geometry}
+\usepackage{mathptmx} % Times New Roman-compatible font
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+\title{\vspace{-2em}CS/SE 4AL3: Project Proposal}
+\author{}
+\date{}
+
+\begin{document}
+
+% ---- TA consulted (required at top of document) ----
+\noindent \textbf{TA(s) Consulted:} [Name(s) of TA(s) you spoke to]
+
+\vspace{0.5em}
+\begin{center}
+{\LARGE \textbf{Project Title Here}}
+\end{center}
+
+% ============================================================
+\section{Team Members}
+\begin{itemize}[noitemsep]
+    \item Full Name 1 -- Student ID -- email@mcmaster.ca
+    \item Full Name 2 -- Student ID -- email@mcmaster.ca
+    \item Full Name 3 -- Student ID -- email@mcmaster.ca
+\end{itemize}
+
+% ============================================================
+\section{Task Overview}
+% Item 2: Task title and overview, significance, what makes it challenging
+[Describe the project at a high level. State the task title, what problem you are solving,
+why it matters, and what makes it non-trivial/challenging.]
+
+% ============================================================
+\section{Task Definition}
+% Item 3: type of data, classification/regression/generation, number of classes, single/multi-label
+[State clearly: What type of data are you using (text, image, tabular, audio, etc.)?
+Is this a classification, regression, or generation task? If classification, how many classes,
+and is it single-label or multi-label?]
+
+% ============================================================
+\section{Problem Description and Impact}
+% Item 4: Describe the problem, its impact on the real world, and why it is challenging
+[Explain the problem in more depth, its real-world significance/impact, and elaborate on
+the technical or practical challenges involved.]
+
+% ============================================================
+\section{Data Source(s) and Collection Plan}
+% Item 5
+[Describe where your data comes from. Include:
+\begin{itemize}[noitemsep]
+    \item Links to the data source(s)
+    \item If scraped: method and how you will respect terms-of-service / robots.txt
+    \item If via API: how you will handle authentication and rate limiting
+    \item If from Kaggle: BOTH the Kaggle link AND the original source link
+    \item Available metadata for the corpus
+    \item If data is unlabeled: your plan for labeling it, and estimated time per instance
+    \item If not collected by you: details on how it was originally collected/annotated/preprocessed
+    \item Whether you will use the full dataset or a subset, and your justification
+\end{itemize}
+
+% ============================================================
+\section{Dataset Size and Example Data Points}
+% Item 6: expected size (>= 1k data points) and 3 example data points with labels
+[State the expected number of data points in your dataset (minimum 1,000).]
+
+\subsection*{Example Data Points}
+\begin{enumerate}[noitemsep]
+    \item \textbf{Input:} [example 1] \quad \textbf{Label:} [label 1]
+    \item \textbf{Input:} [example 2] \quad \textbf{Label:} [label 2]
+    \item \textbf{Input:} [example 3] \quad \textbf{Label:} [label 3]
+\end{enumerate}
+
+% ============================================================
+\section{Proposed Solution}
+% Item 7: modeling approach, features/labels, candidate models, existing solutions,
+% 2-5 cited sources, evaluation plan, libraries
+[Describe your planned approach:
+\begin{itemize}[noitemsep]
+    \item What features and target labels will you use?
+    \item What model(s) will you try (no simple linear regression)?
+    \item What existing solutions/approaches exist for this problem?
+    \item How will you evaluate whether your model is good (metrics, validation strategy)?
+    \item What libraries/frameworks do you intend to use?
+\end{itemize}
+
+\subsection*{Sources of Inspiration}
+% Must cite 2-5 sources (papers, books, ML challenges)
+\begin{enumerate}[noitemsep]
+    \item Author(s), ``Title,'' Venue/Year.
+    \item Author(s), ``Title,'' Venue/Year.
+\end{enumerate}
+
+% ============================================================
+\section{TA Consultation Summary}
+% Item 8: paragraph on what you discussed with your TA, their advice, and how it shaped your plans
+[Summarize what you discussed with your TA, the advice/feedback they provided, and how it
+influenced or changed your project plans.]
+
+% ============================================================
+% Note: The Team Contract (Item 9) must be submitted as a SEPARATE PDF, not part of this document.
+% See the assignment instructions, Section 4, for required contents and signatures.
+
+\end{document}
