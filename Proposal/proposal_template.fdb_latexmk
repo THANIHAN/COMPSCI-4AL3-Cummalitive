@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1791222250.55553 "c:/Users/Thani/OneDrive/Documents/school/Year3/Y3T1/4AL3/Cummalitive/COMPSCI-4AL3-Cummalitive/Proposal/proposal_template.tex" "proposal_template.pdf" "proposal_template" 1791222251.64113 0
-  "c:/Users/Thani/OneDrive/Documents/school/Year3/Y3T1/4AL3/Cummalitive/COMPSCI-4AL3-Cummalitive/Proposal/proposal_template.tex" 1791222251 6803 2cbc788cd0e265048601c9e74c36557d ""
+["pdflatex"] 1791225355.44935 "c:/Users/Thani/OneDrive/Documents/school/Year3/Y3T1/4AL3/Cummalitive/COMPSCI-4AL3-Cummalitive/Proposal/proposal_template.tex" "proposal_template.pdf" "proposal_template" 1791225356.6048 0
+  "c:/Users/Thani/OneDrive/Documents/school/Year3/Y3T1/4AL3/Cummalitive/COMPSCI-4AL3-Cummalitive/Proposal/proposal_template.tex" 1791225354 8427 54efb6c2cf3fd41f5fd70554ab90e56d ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1770501513 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1770503496 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1770521683 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -72,9 +72,9 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1770522074 5587484 49bd08ff372a6985d7d70778694ddaac ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1770522241 3636164 e1654fb31c6a1cd1eeee26d25ab7bdfa ""
   "c:/texlive/2025/texmf.cnf" 1770522060 713 e69b156964470283e0530f5060668171 ""
-  "proposal_template.aux" 1791222251 1118 a594c96fad946dbae9888b36b4b6c2b8 "pdflatex"
-  "proposal_template.out" 1791222251 1304 754daea370117e3a8b5bea4baabe6acd "pdflatex"
-  "proposal_template.tex" 1791222251 6803 2cbc788cd0e265048601c9e74c36557d ""
+  "proposal_template.aux" 1791225356 1118 a594c96fad946dbae9888b36b4b6c2b8 "pdflatex"
+  "proposal_template.out" 1791225356 1304 754daea370117e3a8b5bea4baabe6acd "pdflatex"
+  "proposal_template.tex" 1791225354 8427 54efb6c2cf3fd41f5fd70554ab90e56d ""
   (generated)
   "proposal_template.aux"
   "proposal_template.log"
