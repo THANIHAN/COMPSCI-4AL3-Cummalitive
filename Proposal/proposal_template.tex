@@ -28,15 +28,15 @@
 % ============================================================
 \section{Team Members}
 \begin{itemize}[noitemsep]
-    \item Full Name 1 -- Student ID -- email@mcmaster.ca
+    \item Emre Bozkurt -- 400555259 -- bozkurte@mcmaster.ca
     \item Thanihan Parasutharan -- 400583703 -- parasutt@mcmaster.ca
-    \item Full Name 3 -- Student ID -- email@mcmaster.ca
+    \item Yashasvi Seth -- 400606204 -- sethy@mcmaster.ca
 \end{itemize}
 
 % ============================================================
 \section{Task Overview}
 % Item 2: Task title and overview, significance, what makes it challenging
-We are creating a program to catalogue various percussive instruments based on their waveform. 
+We are creating a program to catalogue various orchestral instruments based on their waveform. 
 Many musicians find it very difficult to catalogue instruments because many instruments do not have physical identifiers on them.
 
 
@@ -45,7 +45,7 @@ This task is challenging because the raw waveform must be converted with a Fouri
 % ============================================================
 \section{Task Definition}
 % Item 3: type of data, classification/regression/generation, number of classes, single/multi-label
-The data we are working with is an audio .mp3 file. This is a single-label, multi-class classification task with 20 classes, one per instrument in the dataset: flute, oboe, cor anglais (English horn), clarinet, bass clarinet, bassoon, contrabassoon, saxophone, French horn, trombone, trumpet, tuba, banjo, cello, double bass, guitar, mandolin, viola, violin. Each clip is one note by one instrument. We have multiple features: fundamental frequencies, timbre, resonance, harmonics, noisiness/dynamics.
+The data we are working with is an audio .mp3 file. This is a single-label, multi-class classification task with 19 classes, one per instrument in the dataset: flute, oboe, cor anglais (English horn), clarinet, bass clarinet, bassoon, contrabassoon, saxophone, French horn, trombone, trumpet, tuba, banjo, cello, double bass, guitar, mandolin, viola, violin. Each clip is one note by one instrument. We have multiple features: fundamental frequencies, timbre, resonance, harmonics, noisiness/dynamics.
 
 % ============================================================
 \section{Problem Description and Impact}
@@ -57,7 +57,7 @@ The challenges are: (1) audio analysis requires knowledge of signal processing; 
 % ============================================================
 \section{Data Source(s) and Collection Plan}
 % Item 5
-[Describe where your data comes from. Include:
+
 \begin{itemize}[noitemsep]
     \item Links to the data source(s): 
     \item \url{https://philharmonia.co.uk/resources/sound-samples/}
@@ -71,7 +71,7 @@ The challenges are: (1) audio analysis requires knowledge of signal processing; 
 % ============================================================
 \section{Dataset Size and Example Data Points}
 % Item 6: expected size (>= 1k data points) and 3 example data points with labels
-The collection of instruments has well over 1000 data points (one note per file); once we parse the data, we will report the exact count.
+The collection of instruments has 14,226 clips (one note per file).
 \subsection*{Example Data Points}
 \begin{enumerate}[noitemsep]
     \item \textbf{Input:} [\texttt{flute\_A4\_1\_forte\_normal.mp3} (a 1-second flute note A4, forte)] \quad \textbf{Label:} [flute]
@@ -83,6 +83,24 @@ The collection of instruments has well over 1000 data points (one note per file)
 \section{Proposed Solution}
 % Item 7: modeling approach, features/labels, candidate models, existing solutions,
 % 2-5 cited sources, evaluation plan, libraries
+
+Our pipeline will be as follows: decode the .mp3, convert to mono, resample to 16kHz, trim silences, and normalize clip length by padding or cropping to a fixed length (1-2 seconds, will be determined experimentally). 
+
+We can then use the cleaned data to process inputs for a model. We have two options, building hand crafted features like MFCC mean and standard deviation, spectral centroid, rolloff, flatness, zero-crossing rate, and attack time for a classical SVM or random forest model, or log-mel spectogram for a small CNN with about 4 conv blocks. 
+
+We will also evalutate the dataset further:
+\begin{itemize}[noitemsep]
+    \item A grouped split, where we group all clips by `(instrument, pitch)', so the same note at different dynamics or durations never appears in both train and test. Without this the accuracy of the model would be artificually inflated by memorizing the pitch of the note.
+    \item We use macro F1 score and balanced accuracy as our metrics, since the dataset is imbalanced across instruments. (There are 1,502 violin clips, and none of the other instruments have clip counts above 100.)
+    \item Tuba, contrabassoon and double bass can be identified by pitch alone. Therefore, we will evaluate on the pitch range where instruments overlap, or hold out whole pitches.
+\end{itemize}
+
+
+
+
+
+Old stuff.
+
 \begin{itemize}[noitemsep]
     \item Each clip is resampled, trimmed, normalized, then converted to a spectrogram. The target label is one of the 19 instruments.
     \item What model(s) will you try (no simple linear regression)?
@@ -108,8 +126,7 @@ The collection of instruments has well over 1000 data points (one note per file)
 % ============================================================
 \section{TA Consultation Summary}
 % Item 8: paragraph on what you discussed with your TA, their advice, and how it shaped your plans
-[Summarize what you discussed with your TA, the advice/feedback they provided, and how it
-influenced or changed your project plans.]
+
 
 % ============================================================
 % Note: The Team Contract (Item 9) must be submitted as a SEPARATE PDF, not part of this document.
