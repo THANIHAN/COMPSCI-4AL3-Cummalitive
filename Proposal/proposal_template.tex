@@ -91,7 +91,7 @@ We can then use the cleaned data to process inputs for a model. We have two opti
 We will also evalutate the dataset further:
 \begin{itemize}[noitemsep]
     \item A grouped split, where we group all clips by `(instrument, pitch)', so the same note at different dynamics or durations never appears in both train and test. Without this the accuracy of the model would be artificually inflated by memorizing the pitch of the note.
-    \item We use macro F1 score and balanced accuracy as our metrics, since the dataset is imbalanced across instruments. (There are 1,502 violin clips, and none of the other instruments have clip counts above 100.)
+    \item We use macro F1 score and balanced accuracy as our metrics, since the dataset is imbalanced across instruments. (There are 1,502 violin clips, and while some of the other instruments dont even have clip counts above 100.)
     \item Tuba, contrabassoon and double bass can be identified by pitch alone. Therefore, we will evaluate on the pitch range where instruments overlap, or hold out whole pitches.
 \end{itemize}
 
