@@ -36,68 +36,59 @@
 % ============================================================
 \section{Task Overview}
 % Item 2: Task title and overview, significance, what makes it challenging
-[Describe the project at a high level. State the task title, what problem you are solving,
-why it matters, and what makes it non-trivial/challenging.]
-We are creating a program to catalogue various percusive instruments based on their waveform. 
+We are creating a program to catalogue various percussive instruments based on their waveform. 
 Many musicians find it very difficult to catalogue instruments because many instruments do not have physical identifiers on them.
 
 
-This task is challenging because: the raw waveform must be converted with a Fourier transformation into time--frequency features such as a spectrogram.
+This task is challenging because the raw waveform must be converted with a Fourier transform into time--frequency features such as a spectrogram.
 
 % ============================================================
 \section{Task Definition}
 % Item 3: type of data, classification/regression/generation, number of classes, single/multi-label
-[State clearly: What type of data are you using (text, image, tabular, audio, etc.)?
-Is this a classification, regression, or generation task? If classification, how many classes,
-and is it single-label or multi-label?]
-The data we are working with is an audio .wav file. This is a single-label, multi-class classification task with 8 classes, one per instrument in the dataset: flute, oboe, cor anglais (english horn), clarinet, bass clarinet, bassoon, contrabassoon, saxophone, french horn, trombone, trumpet, tuba, banjo, cello, db bass, guitar, mandolin, viola, violin. Each clip is one note by one instrument. The input features describe the sond of the note: fundamanetal frequency, timbre, harmonics, resonance, dynamics 
-We have 39 classes (various percussive instruments). We have multipule features: Fundamental frequencies, Timbre, Resonance, Harmonics, noisiness/dynamics
+The data we are working with is an audio .mp3 file. This is a single-label, multi-class classification task with 20 classes, one per instrument in the dataset: flute, oboe, cor anglais (English horn), clarinet, bass clarinet, bassoon, contrabassoon, saxophone, French horn, trombone, trumpet, tuba, banjo, cello, double bass, guitar, mandolin, viola, violin. Each clip is one note by one instrument. We have multiple features: fundamental frequencies, timbre, resonance, harmonics, noisiness/dynamics.
 
 % ============================================================
 \section{Problem Description and Impact}
 % Item 4: Describe the problem, its impact on the real world, and why it is challenging
-[Explain the problem in more depth, its real-world significance/impact, and elaborate on
-the technical or practical challenges involved.]
+
 Suppose a recording of a composition uses a certain wind/string instrument, and we want to find the same instrument again. Being able to say what instrument a sound came from based on how it sounds makes it easier to search.
 
-The challenges are: (1) audio analysis requires knowledge of signal-processing, we will be using Fourier transofms; (2) the same instrument sounds different across pitches, dynamics and articulation, so the model must not just learn "pitch" or "loudness" as a shortcut; (3) many instruments uner the same family share very similar timbre; (4) because the recordings are really clean this may not transfer to real world recordings.
+The challenges are: (1) audio analysis requires knowledge of signal processing; we will be using Fourier transforms; (2) the same instrument sounds different across pitches, dynamics and articulation, so the model must not just learn ``pitch'' or ``loudness'' as a shortcut; (3) many instruments in the same family share very similar timbre; (4) because the recordings are really clean, this may not transfer to real-world recordings.
 % ============================================================
 \section{Data Source(s) and Collection Plan}
 % Item 5
 [Describe where your data comes from. Include:
 \begin{itemize}[noitemsep]
     \item Links to the data source(s): 
-    \item https://philharmonia.co.uk/resources/sound-samples/.
+    \item \url{https://philharmonia.co.uk/resources/sound-samples/}
     
     \item Metadata: each file's name has the instrument, pitch, note duration, dynamics and articulation
     \item Data is already labeled
     \item If not collected by you: details on how it was originally collected/annotated/preprocessed
-    \item We will be using a subset of the full database (brass, string, woodwinds). This is because percussion instruments do not have that many recordings.
+    \item We will be using a subset of the full database (brass, strings, woodwinds). This is because percussion instruments do not have that many recordings.
 \end{itemize}
 
 % ============================================================
 \section{Dataset Size and Example Data Points}
 % Item 6: expected size (>= 1k data points) and 3 example data points with labels
-[State the expected number of data points in your dataset (minimum 1,000).]
-The collection of instrumetns has well over 1000 data points (one note per file), once we parse the data we will report the exact count
+The collection of instruments has well over 1000 data points (one note per file); once we parse the data, we will report the exact count.
 \subsection*{Example Data Points}
 \begin{enumerate}[noitemsep]
-    \item \textbf{Input:} [\texttt{flute\_A4\_1\_forte\_normal.wav} (a 1-second flute note A4, forte)] \quad \textbf{Label:} [flute]
-    \item \textbf{Input:} [\texttt{clarinet\_C4\_1\_piano\_normal.wav} (clarinet note, C4, piano)] \quad \textbf{Label:} [clarinet]
-    \item \textbf{Input:} \texttt{bassoon\_G2\_1\_fortissimo\_normal.wav} (low bassoon note, G2) \quad \textbf{Label:} [bassoon]
+    \item \textbf{Input:} [\texttt{flute\_A4\_1\_forte\_normal.mp3} (a 1-second flute note A4, forte)] \quad \textbf{Label:} [flute]
+    \item \textbf{Input:} [\texttt{clarinet\_C4\_1\_piano\_normal.mp3} (clarinet note, C4, piano)] \quad \textbf{Label:} [clarinet]
+    \item \textbf{Input:} \texttt{bassoon\_G2\_1\_fortissimo\_normal.mp3} (low bassoon note, G2) \quad \textbf{Label:} [bassoon]
 \end{enumerate}
 
 % ============================================================
 \section{Proposed Solution}
 % Item 7: modeling approach, features/labels, candidate models, existing solutions,
 % 2-5 cited sources, evaluation plan, libraries
-[Describe your planned approach:
 \begin{itemize}[noitemsep]
-    \item each clip is resampled, trimmed, normalaized, then converted to a spectrogram.The target label is one of the 19 instruments
+    \item Each clip is resampled, trimmed, normalized, then converted to a spectrogram. The target label is one of the 19 instruments.
     \item What model(s) will you try (no simple linear regression)?
-    \item instrument recognition is well studied, Our project applies these ideas into a focused instrument subset.
+    \item Instrument recognition is well studied. Our project applies these ideas to a focused instrument subset.
     \item How will you evaluate whether your model is good (metrics, validation strategy)?
-    \item librosa, torchaudio/PyTorch, scikit-learn, pandas, NumPyt, and matplotlib
+    \item librosa, torchaudio/PyTorch, scikit-learn, pandas, NumPy, and matplotlib
 \end{itemize}
 
 \subsection*{Sources of Inspiration}

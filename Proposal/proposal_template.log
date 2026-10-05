@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.7)  28 SEP 2026 15:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.7)  5 OCT 2026 13:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -296,7 +296,30 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 31
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [1
 
-{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}] [2] [3] (./proposal_template.aux)
+{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 63.
+ (c:/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 63.
+ (c:/texlive/2025/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 63.
+ (c:/texlive/2025/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 63.
+ (c:/texlive/2025/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 63.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 63.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 63.
+ [2] [3] (./proposal_template.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -305,18 +328,18 @@ Package rerunfilecheck Info: File `proposal_template.out' has not changed.
 (rerunfilecheck)             Checksum: 754DAEA370117E3A8B5BEA4BAABE6ACD;1304.
  ) 
 Here is how much of TeX's memory you used:
- 9402 strings out of 467533
- 145710 string characters out of 5423669
- 566229 words of memory out of 5000000
- 38204 multiletter control sequences out of 15000+600000
- 638112 words of font info for 56 fonts, out of 8000000 for 9000
+ 9465 strings out of 467533
+ 146924 string characters out of 5423669
+ 565229 words of memory out of 5000000
+ 38250 multiletter control sequences out of 15000+600000
+ 645723 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,5n,79p,635b,552s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,5n,79p,647b,577s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on proposal_template.pdf (3 pages, 48478 bytes).
+Output written on proposal_template.pdf (3 pages, 48540 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
- 71 compressed objects within 1 object stream
+ 84 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  21 named destinations out of 1000 (max. 500000)
  65 words of extra memory for PDF output out of 10000 (max. 10000000)
 
