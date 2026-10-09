@@ -7,129 +7,119 @@
 \usepackage{setspace}
 \onehalfspacing
 
-\usepackage{hyperref}
-\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
 \usepackage{enumitem}
+\usepackage{titlesec}
 
-\title{\vspace{-2em}CS/SE 4AL3: Project Proposal}
-\author{}
-\date{}
+% ---- Compact layout (fonts, margins and line spacing unchanged) ----
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.6em}{}
+\titlespacing*{\section}{0pt}{0.5em}{0.1em}
+\titlespacing*{\subsection}{0pt}{0.3em}{0em}
+\setlist{nosep, leftmargin=*, labelindent=0.5em}
+\setlength{\parskip}{0pt}
 
 \begin{document}
-
 % ---- TA consulted (required at top of document) ----
-\noindent \textbf{TA(s) Consulted:} [Name(s) of TA(s) you spoke to]
+\noindent \textbf{TA(s) Consulted:} Abdulazeez \hfill \textbf{Group:} [21]
 
-\vspace{0.5em}
 \begin{center}
-{\LARGE \textbf{Instrument Cataloguer}}
+{\Large \textbf{Instrument Cataloguer}}
 \end{center}
-
-% ============================================================
+\vspace{-1.5em}
 \section{Team Members}
-\begin{itemize}[noitemsep]
-    \item Emre Bozkurt -- 400555259 -- bozkurte@mcmaster.ca
-    \item Thanihan Parasutharan -- 400583703 -- parasutt@mcmaster.ca
-    \item Yashasvi Seth -- 400606204 -- sethy@mcmaster.ca
-\end{itemize}
-
-% ============================================================
+{\raggedright\noindent Emre Bozkurt (400555259, bozkurte@mcmaster.ca); Thanihan Parasutharan (400583703, parasutt@mcmaster.ca); Yashasvi Seth (400606204, sethy@mcmaster.ca)\par}
 \section{Task Overview}
-% Item 2: Task title and overview, significance, what makes it challenging
 We are creating a program to catalogue various orchestral instruments based on their waveform. 
 Many musicians find it very difficult to catalogue instruments because many instruments do not have physical identifiers on them.
-
-
 This task is challenging because the raw waveform must be converted with a Fourier transform into time--frequency features such as a spectrogram.
-
-% ============================================================
 \section{Task Definition}
-% Item 3: type of data, classification/regression/generation, number of classes, single/multi-label
 The data we are working with is an audio .mp3 file. This is a single-label, multi-class classification task with 19 classes, one per instrument in the dataset: flute, oboe, cor anglais (English horn), clarinet, bass clarinet, bassoon, contrabassoon, saxophone, French horn, trombone, trumpet, tuba, banjo, cello, double bass, guitar, mandolin, viola, violin. Each clip is one note by one instrument. We have multiple features: fundamental frequencies, timbre, resonance, harmonics, noisiness/dynamics.
-
-% ============================================================
 \section{Problem Description and Impact}
-% Item 4: Describe the problem, its impact on the real world, and why it is challenging
+Musicians, producers, and archivists work with large collections of recorded audio that are often poorly
+labelled. Sample libraries can contain thousands of unnamed or inconsistently named clips, and searching
+recordings by instrument usually depends on someone having tagged them by hand. A model that identifies
+the instrument from the sound alone would allow these collections to be tagged and searched
+automatically, and it is a first step towards recognizing instruments within full pieces of music.
 
-Suppose a recording of a composition uses a certain wind/string instrument, and we want to find the same instrument again. Being able to say what instrument a sound came from based on how it sounds makes it easier to search.
-
-The challenges are: (1) audio analysis requires knowledge of signal processing; we will be using Fourier transforms; (2) the same instrument sounds different across pitches, dynamics and articulation, so the model must not just learn ``pitch'' or ``loudness'' as a shortcut; (3) many instruments in the same family share very similar timbre; (4) because the recordings are really clean, this may not transfer to real-world recordings.
-% ============================================================
+This task is challenging for several reasons:
+\begin{enumerate}
+    \item \textbf{Pitch as a shortcut:} the same instrument sounds very different across its range, and
+    low instruments such as the tuba, contrabassoon, and double bass can be partly identified by their
+    register alone. The model must learn timbre, not just pitch or loudness.
+    \item \textbf{Similar timbres:} instruments in the same family (e.g.\ viola and violin, oboe and
+    cor anglais) sound very alike.
+    \item \textbf{Class imbalance:} the number of clips per instrument ranges from 74 (banjo) to
+    1,502 (violin).
+    \item \textbf{Misleading evaluation:} the dataset contains many near-identical recordings of the
+    same note at different dynamics and durations, so a random train/test split overstates performance.
+    Prior work on this dataset reports 97\% accuracy using such a split (Mahanta et al., 2021)-.
+    \item \textbf{Clean recordings:} the samples are recorded in studio conditions, so a model trained
+    on them may not transfer to noisier real-world audio.
+\end{enumerate}
+Our evaluation plan in Section~7 is designed around these challenges: a pitch-only baseline and
+overlap-range accuracy for (1), a confusion matrix for (2), macro-F1 and a weighted loss for (3), a
+grouped split for (4), and a noise robustness test for (5).
 \section{Data Source(s) and Collection Plan}
-% Item 5
-
-\begin{itemize}[noitemsep]
-    \item Links to the data source(s): 
-    \item \url{https://philharmonia.co.uk/resources/sound-samples/}
-    
-    \item Metadata: each file's name has the instrument, pitch, note duration, dynamics and articulation
-    \item Data is already labeled
-    \item If not collected by you: details on how it was originally collected/annotated/preprocessed
+\begin{itemize}
+    \item Source: \url{https://philharmonia.co.uk/resources/sound-samples/}
+    \item Metadata: each file's name has the instrument, pitch, note duration, dynamics and articulation.
     \item We will be using a subset of the full database (brass, strings, woodwinds). This is because percussion instruments do not have that many recordings.
 \end{itemize}
-
-% ============================================================
 \section{Dataset Size and Example Data Points}
-% Item 6: expected size (>= 1k data points) and 3 example data points with labels
 The collection of instruments has 14,226 clips (one note per file).
 \subsection*{Example Data Points}
-\begin{enumerate}[noitemsep]
-    \item \textbf{Input:} [\texttt{flute\_A4\_1\_forte\_normal.mp3} (a 1-second flute note A4, forte)] \quad \textbf{Label:} [flute]
-    \item \textbf{Input:} [\texttt{clarinet\_C4\_1\_piano\_normal.mp3} (clarinet note, C4, piano)] \quad \textbf{Label:} [clarinet]
-    \item \textbf{Input:} \texttt{bassoon\_G2\_1\_fortissimo\_normal.mp3} (low bassoon note, G2) \quad \textbf{Label:} [bassoon]
+\begin{enumerate}
+    \item \textbf{Input:} \texttt{flute\_A4\_1\_forte\_normal.mp3} (a 1-second flute note A4, forte) \quad \textbf{Label:} flute
+    \item \textbf{Input:} \texttt{clarinet\_C4\_1\_piano\_normal.mp3} (clarinet note, C4, piano) \quad \textbf{Label:} clarinet
+    \item \textbf{Input:} \texttt{bassoon\_G2\_1\_fortissimo\_normal.mp3} (low bassoon note, G2) \quad \textbf{Label:} bassoon
 \end{enumerate}
-
-% ============================================================
 \section{Proposed Solution}
-% Item 7: modeling approach, features/labels, candidate models, existing solutions,
-% 2-5 cited sources, evaluation plan, libraries
-
 Our pipeline will be as follows: decode the .mp3, convert to mono, resample to 16kHz, trim silences, and normalize clip length by padding or cropping to a fixed length (1-2 seconds, will be determined experimentally). 
 
-We can then use the cleaned data to process inputs for a model. We have two options, building hand crafted features like MFCC mean and standard deviation, spectral centroid, rolloff, flatness, zero-crossing rate, and attack time for a classical SVM or random forest model, or log-mel spectogram for a small CNN with about 4 conv blocks. 
+We can then use the cleaned data to process inputs for a model. We have a baseline where we build hand crafted features like MFCC mean and standard deviation, spectral centroid, rolloff, flatness, zero-crossing rate and attack time for a classical SVM or random forest model. This baseline will be used to compare against a more advanced model using log-mel spectrogram for a small CNN with about 4 conv blocks, which is the main goal we are trying to achieve with the project. 
 
-We will also evalutate the dataset further:
-\begin{itemize}[noitemsep]
-    \item A grouped split, where we group all clips by `(instrument, pitch)', so the same note at different dynamics or durations never appears in both train and test. Without this the accuracy of the model would be artificually inflated by memorizing the pitch of the note.
-    \item We use macro F1 score and balanced accuracy as our metrics, since the dataset is imbalanced across instruments. (There are 1,502 violin clips, and while some of the other instruments dont even have clip counts above 100.)
-    \item Tuba, contrabassoon and double bass can be identified by pitch alone. Therefore, we will evaluate on the pitch range where instruments overlap, or hold out whole pitches.
+To evaluate the model:
+\begin{itemize}
+    \item A grouped split, where we group all clips by `(instrument, pitch)', so the same note at different dynamics or durations never appears in both train and test. Without this the accuracy of the model would be artificially inflated by near identical recordings.
+    \item We use macro F1 score and balanced accuracy as our metrics, since the dataset is imbalanced across instruments. (There are 1,502 violin clips, and while some of the other instruments don't even have clip counts above 100.)
+    \item Tuba, contrabassoon and double bass can be identified partly by register. Therefore, we will evaluate on the pitch range where instruments overlap.
 \end{itemize}
 
+Finally, we will add noise to the test data at increasing levels and plot accuracy against signal-to-noise ratio. The model should be robust to noise, since real-world recordings are not as clean as the dataset.
 
-
-
-
-Old stuff.
-
-\begin{itemize}[noitemsep]
-    \item Each clip is resampled, trimmed, normalized, then converted to a spectrogram. The target label is one of the 19 instruments.
-    \item What model(s) will you try (no simple linear regression)?
-    \item Instrument recognition is well studied. Our project applies these ideas to a focused instrument subset.
-    \item How will you evaluate whether your model is good (metrics, validation strategy)?
-    \item librosa, torchaudio/PyTorch, scikit-learn, pandas, NumPy, and matplotlib
-\end{itemize}
+{\raggedright\noindent\textbf{Libraries:} librosa, PyTorch/torchaudio, scikit-learn, \texttt{panns\_inference}, audiomentations, pandas/NumPy, matplotlib\par}
 
 \subsection*{Sources of Inspiration}
-% Must cite 2-5 sources (papers, books, ML challenges)
-\begin{enumerate}[noitemsep]
+\begin{enumerate}
     \item J.\ Engel et al., ``Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders''
     (the NSynth dataset), ICML 2017.
-    \item J.\ J.\ Bosch, J.\ Janer, F.\ Fuhrmann, and P.\ Herrera, ``A Comparison of Sound Segregation
-    Techniques for Predominant Instrument Recognition in Musical Audio Signals'' (the IRMAS dataset),
-    ISMIR 2012.
+    \item A.\ Eronen and A.\ Klapuri, ``Musical Instrument Recognition Using Cepstral Coefficients
+    and Temporal Features,'' Proc.\ IEEE ICASSP, 2000.
     \item Y.\ Han, J.\ Kim, and K.\ Lee, ``Deep Convolutional Neural Networks for Predominant Instrument
     Recognition in Polyphonic Music,'' IEEE/ACM Transactions on Audio, Speech, and Language Processing, 2017.
     \item Q.\ Kong et al., ``PANNs: Large-Scale Pretrained Audio Neural Networks for Audio Pattern
     Recognition,'' IEEE/ACM Transactions on Audio, Speech, and Language Processing, 2020.
+    \item D.\ S.\ Park et al., ``SpecAugment: A Simple Data Augmentation Method for Automatic Speech
+    Recognition,'' Proc.\ Interspeech, 2019.
 \end{enumerate}
 
-% ============================================================
+\subsection*{Existing Solutions}
+\begin{itemize}
+    \item Mahanta et al., 2021 (\href{https://arxiv.org/pdf/2105.00933}{arXiv}) The same Philharmonia dataset, 20 classes (percussion merged into one). Fully connected network on MFCCs, 97\% accuracy on a random 80/20 split. How we differ: A random split leaks near-duplicate notes into the test set, and there’s no pitch-shortcut or noise testing. So we test robustness directly with added noise.
+    \item Siebert et al., 2016 (\href{https://orbi.umons.ac.be/bitstream/20.500.12907/41932/1/Benelearn_2016_paper_40.pdf}{PDF}) Hand-crafted descriptors with kNN/SVM on Philharmonia ($\sim$95\%) and on the Iowa samples (much lower, $\sim$84\%). How we differ: Shows classic features do well on clean single notes but drop on other recording sets.
+\end{itemize}
 \section{TA Consultation Summary}
-% Item 8: paragraph on what you discussed with your TA, their advice, and how it shaped your plans
+We met with our TA, Abdulazeez, during tutorial and walked him through our dataset, the 19 instrument
+classes, and our plan to compare a classical baseline against a CNN trained on log-mel spectrograms.
+He felt the project was challenging but appropriate, noting that turning audio into spectrograms makes it an interesting vision-style problem, which confirmed our choice of a CNN as the main model.
+He advised us to find ways to measure differences between the spectrograms of different instruments.
+In response, we will compare the average log-mel spectrogram of each instrument and compute distances
+between classes, which should help explain which instruments the model confuses.
+He also recommended analyzing results for each class individually, since a large class such as violin
+could inflate overall accuracy. This is why we report macro-F1 and balanced accuracy alongside
+per-class results and a confusion matrix, rather than relying on accuracy alone.
 
-
-% ============================================================
-% Note: The Team Contract (Item 9) must be submitted as a SEPARATE PDF, not part of this document.
-% See the assignment instructions, Section 4, for required contents and signatures.
+% ---- AI disclosure goes here ----
 
 \end{document}
