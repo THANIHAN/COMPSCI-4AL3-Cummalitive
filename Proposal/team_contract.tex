@@ -1,0 +1,121 @@
+% ============================================================
+% Group Agreement (Team Contract) -- CS/SE 4AL3 Fall 2026
+% Submit as a SEPARATE PDF from the proposal.
+% Search for "\todo{" before submitting.
+% ============================================================
+\documentclass[12pt]{article}
+
+% ---- Formatting (matches the proposal) ----
+\usepackage[letterpaper,margin=0.8in]{geometry}
+\usepackage{mathptmx}            % Times New Roman-compatible font
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.7em}
+\setlist{leftmargin=1.6em}
+
+% Section headings: 12pt bold, numbered
+\titleformat{\section}{\normalfont\normalsize\bfseries}{\thesection}{0.8em}{}
+\titlespacing*{\section}{0pt}{1.1em}{0.4em}
+
+% Red bracketed placeholder
+\newcommand{\todo}[1]{\textcolor[HTML]{C0392B}{\textit{[#1]}}}
+
+\hypersetup{
+  pdftitle={Team Contract},
+  pdfauthor={Emre Bozkurt, Thanihan Parasutharan, Yashasvi Seth}
+}
+
+\pagestyle{plain}
+
+\begin{document}
+
+% ---------- Header block ----------
+\noindent\textbf{Group \todo{XX}}\hfill\textbf{TA(s) consulted:} Abdulazeez
+
+\vspace{0.2em}
+\begin{center}
+  \textbf{CS/SE 4AL3: Applied Machine Learning --- Fall 2026}\\
+  \textbf{Team Contract}\\
+  Instrument Cataloguer
+
+  \vspace{0.6em}
+  \begin{tabular}{lll}
+    \textbf{Name} & \textbf{Student \#} & \textbf{MacID / Email} \\
+    Emre Bozkurt          & 400555259 & bozkurte@mcmaster.ca \\
+    Thanihan Parasutharan & 400583703 & parasutt@mcmaster.ca \\
+    Yashasvi Seth         & 400606204 & sethy@mcmaster.ca \\
+  \end{tabular}
+\end{center}
+
+\vspace{-0.4em}
+\noindent\rule{\linewidth}{0.5pt}
+
+% ============================================================
+\section{Team Purpose and Mission}
+
+Our team wants to learn how to apply machine learning concepts in a real-world setting and use them to solve problems that would otherwise be very hard. This semester, we will do that by building a model that identifies which orchestral instrument is playing a single note, using only its audio recording from the Philharmonia Orchestra sound sample library.
+
+Success looks like understanding the course material, applying it to our project and other problems, and using what we have learned on personal projects in the future. For the project itself, success means building a working classifier that we fully understand, from the audio preprocessing and spectrogram features to the model itself, and that performs well on the hard cases (similar-sounding instruments in the same family) rather than getting a score inflated by pitch shortcuts or the largest classes.
+
+% ============================================================
+\section{Expectations of Each Member}
+
+Each member is expected to attend every in-person or online team meeting, with the date and time chosen based on everyone's availability. At every meeting, each member will show what they have done since the previous meeting. Members will do their share of the work to a good standard, meet agreed deadlines, and respond to messages within a day.
+
+If a member cannot finish a task or is falling behind, they will tell the group as early as possible so the work can be redistributed or completed by the next meeting, depending on the task's urgency.
+
+We will not have fixed roles. Instead, we will create a checklist for each internal deadline (for example: audio preprocessing, feature extraction, model training, evaluation, and report writing) and distribute the work evenly based on it, as well as everyone's availability and interest. Because we will reassign tasks before each deadline, no one will be stuck doing the same thing or doing most of the work. We will keep the checklist in our GitHub repository so everyone can see who is responsible for what.
+
+% ============================================================
+\section{Leadership, Facilitation, and Management}
+
+For each meeting, we will rotate two roles: who runs the meeting and who takes notes. For each deliverable, we will rotate who is responsible for submitting it. Notes will be dated and added to the GitHub repository as a text file so that everyone can see what was covered during the meeting. Everyone shares the responsibility for tracking deadlines.
+
+Decisions are made by pitching the idea and the reasoning behind it, then putting it to a vote among the three group members. If there are any concerns, group members are encouraged to bring them up. Every member can pitch an idea or disagree with or counter a decision, as long as they provide reasoning.
+
+% ============================================================
+\section{Communication and Meetings}
+
+We are using WhatsApp as our main method of communication and expect every member to respond within the same day. We will meet either on call or in person at least twice a week. Our code, meeting notes, and task checklist will live in a shared GitHub repository.
+
+% ============================================================
+\section{Deadlines and Quality}
+
+\todo{Add internal deadlines relative to the course deadlines}
+
+We will meet in person and review everything that will be submitted on Avenue to Learn together, two to three days before the course deadline, in case there are any discrepancies, anything is missing, or changes need to be made. If a member cannot meet a course deadline, they must inform the rest of the team as soon as possible so the team can redistribute the work. If a member cannot meet an internal deadline, they must inform the rest of the team as soon as possible; depending on the urgency of the task, they may get an extension or the work may be redistributed. At every internal deadline, each member will show their work to the rest of the team.
+
+% ============================================================
+\section{Conflict Resolution}
+
+If a conflict arises, we will address it promptly instead of letting it build up, and we will meet in person (or on a call if in person is not possible) within a day or two. Each member will have a chance to explain their point of view on the issue, and we will focus on resolving it. We will come up with a solution together and agree on what each member will do next. If the conflict is still not resolved after our discussion, we will bring in our TA to guide us. If it is still unresolved, we will contact the instructor for guidance.
+
+% ============================================================
+\section{Amendments}
+
+Any member may propose a change to the contract, which the group will then discuss. A change to the contract will only take effect if every group member agrees. If the contract changes, each member will re-sign the updated contract. All group members will follow the latest version of the contract.
+
+% ============================================================
+\begin{minipage}{\linewidth}
+\section{Signatures}
+By signing below, each member agrees to follow this contract.
+
+\vspace{0.5em}
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{|>{\raggedright\arraybackslash}m{0.30\linewidth}|m{0.40\linewidth}|m{0.20\linewidth}|}
+  \hline
+  \textbf{Printed name} & \textbf{Signature} & \textbf{Date} \\ \hline
+  \rule{0pt}{2.4em}Emre Bozkurt          & & \\ \hline
+  \rule{0pt}{2.4em}Thanihan Parasutharan & & \\ \hline
+  \rule{0pt}{2.4em}Yashasvi Seth         & & \\ \hline
+\end{tabular}
+\end{minipage}
+
+\end{document}
