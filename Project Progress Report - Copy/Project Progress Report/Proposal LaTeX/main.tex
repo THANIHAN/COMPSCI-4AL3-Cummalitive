@@ -17,6 +17,11 @@
 \usepackage{microtype}
 \usepackage{inconsolata}
 \usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{xcolor}
+
+% Placeholder for values still to be filled in. Remove before submitting.
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
 
 % If the title and author information does not fit in the area allocated, uncomment the following
 %
@@ -143,6 +148,7 @@ The class distribution is highly imbalanced. Violin has 1,502 clips, about twent
   }
 \end{table}
 \section{Features}
+\label{sec:features}
 
 
 % Describe any features you used for your model, or how your data was input to your model. Are you doing feature engineering or feature selection? Are you learning embeddings? Is it all part of one neural network? Refer to item 2. This may range from 0.25 pages to 0.5 pages.
@@ -161,9 +167,52 @@ We standardize each feature using statistics from the training set. We do not pe
 
 \section{Implementation}
 
-Describe your model and implementation here. Refer to item 4. This may take around a page.
+% Describe your model and implementation here. Refer to item 4. This may take around a page.
+We implement three models of increasing complexity: a majority-class baseline, a classical baseline using the hand-crafted features from Section~\ref{sec:features}, and a convolutional neural network trained on log-mel spectrograms. Audio loading and feature extraction use librosa, the classical models use scikit-learn, and the CNN is implemented in PyTorch. All models are trained and evaluated on the same splits, described in Section~\ref{sec:results}.
+
+\paragraph{Majority-class baseline.} The simplest baseline always predicts the most frequent class in the training set, which is violin. Since violin makes up about 11\% of the clips, this baseline reaches roughly 11\% accuracy, but its balanced accuracy is only $1/19 \approx 5.3\%$, since it never predicts any other class. Any useful model must clearly beat both of these numbers, and the gap between them shows why accuracy alone is misleading on our imbalanced dataset.
+
+\paragraph{Classical baseline.} Our second baseline trains two classifiers on the standardized feature vectors. The first is a support vector machine with a radial basis function (RBF) kernel, which minimizes the regularized hinge loss and handles the 19 classes by training one binary classifier per pair of classes. The second is a random forest, which grows each tree by choosing splits that minimize Gini impurity and predicts by majority vote over the trees. To account for class imbalance, both models weight each class in inverse proportion to its frequency in the training set. We tune the SVM's regularization strength $C$ and kernel width $\gamma$, and the forest's number of trees and maximum depth, by grid search on the validation set. The selected values are $C = $ \todo{value}, $\gamma = $ \todo{value}, \todo{number} trees, and a maximum depth of \todo{value}.
+
+\paragraph{CNN.} Our main model is a small CNN with four convolutional blocks, shown in Table~\ref{tab:cnn}. Each block applies a $3 \times 3$ convolution, batch normalization, a ReLU activation, and $2 \times 2$ max pooling, so each block halves the size of the spectrogram along both the frequency and time axes while increasing the number of channels. After the last block, global average pooling collapses the remaining frequency and time dimensions into a single vector, which also means the network does not depend on the exact clip length. A dropout layer and a fully connected layer then map this vector to 19 output scores, one per instrument, and a softmax turns these into class probabilities. In total, the network has \todo{number} trainable parameters.
+
+\begin{table}[t]
+  \centering
+  \small
+  \begin{tabular}{ll}
+    \hline
+    \textbf{Layer} & \textbf{Output channels} \\
+    \hline
+    Input log-mel spectrogram & 1 \\
+    Conv block 1 & \todo{n} \\
+    Conv block 2 & \todo{n} \\
+    Conv block 3 & \todo{n} \\
+    Conv block 4 & \todo{n} \\
+    Global average pooling & \todo{n} \\
+    Dropout ($p = $ \todo{p}) + linear & 19 \\
+    \hline
+  \end{tabular}
+  \caption{\label{tab:cnn}
+    CNN architecture. Each conv block is a $3 \times 3$ convolution, batch normalization, ReLU, and $2 \times 2$ max pooling.
+  }
+\end{table}
+
+We train the CNN with a class-weighted cross-entropy loss. For a batch of $N$ clips with labels $y_i$ and predicted class probabilities $\hat{p}_i$, the loss is
+\begin{equation}
+  \mathcal{L} = -\frac{1}{N} \sum_{i=1}^{N} w_{y_i} \log \hat{p}_{i, y_i},
+  \qquad
+  w_c = \frac{N_{\text{train}}}{C \cdot N_c},
+\end{equation}
+where $C = 19$ is the number of classes and $N_c$ is the number of training clips in class $c$. Without these weights, the loss would be dominated by the largest classes, and the model could largely ignore rare instruments such as banjo and mandolin.
+
+We optimize the loss with Adam, using a learning rate of \todo{value}, weight decay of \todo{value}, and a batch size of \todo{value}. We train for up to \todo{number} epochs and keep the model from the epoch with the highest macro-F1 on the validation set, stopping early if validation macro-F1 does not improve for \todo{number} epochs. During training, we apply SpecAugment-style frequency and time masking to each spectrogram, as described in Section~\ref{sec:features}. Training takes about \todo{time} on \todo{hardware}.
+
+\paragraph{Implementation details.} Decoding and resampling over 13,000 MP3 files is slow, so we do it once and cache the processed log-mel spectrograms and feature vectors as NumPy arrays. This makes each training epoch much faster and ensures that every model sees exactly the same inputs. We fix the random seeds for the data split, model initialization, and data loading so that results are reproducible. \todo{Describe any implementation problems the group ran into and how they were solved.}
+
+\paragraph{Ablations.} To understand which parts of the CNN matter, we plan to compare the full model against versions trained without class weighting, without SpecAugment, and with 1-second rather than 2-second clips. For the classical baseline, we will compare the random forest's feature importances to see which hand-crafted features are most useful for telling instruments apart. \todo{Report ablation results here or in Section~\ref{sec:results} once they are run.}
 
 \section{Results and Evaluation}
+\label{sec:results}
 
 How are you evaluating your model? What results do you have so far? What are your baselines? Refer to item 5. This may take around 0.5 pages.
 

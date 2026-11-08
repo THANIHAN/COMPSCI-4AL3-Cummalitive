@@ -1,8 +1,8 @@
-PWD C:/Users/Thani/OneDrive/Documents/school/Year3/Y3T1/4AL3/Cummalitive/COMPSCI-4AL3-Cummalitive/Project Progress Report - Copy/Project Progress Report/Proposal LaTeX
+PWD c:/Users/Thani/OneDrive/Documents/school/Year3/Y3T1/4AL3/Cummalitive/COMPSCI-4AL3-Cummalitive/Project Progress Report - Copy/Project Progress Report/Proposal LaTeX
 INPUT c:/texlive/2025/texmf.cnf
 INPUT c:/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT main.tex
+INPUT c:/Users/Thani/OneDrive/Documents/school/Year3/Y3T1/4AL3/Cummalitive/COMPSCI-4AL3-Cummalitive/Project Progress Report - Copy/Project Progress Report/Proposal LaTeX/main.tex
 OUTPUT main.log
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -124,6 +124,16 @@ INPUT c:/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 INPUT c:/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 INPUT c:/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsopn.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT ./main.aux
@@ -135,6 +145,8 @@ INPUT c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/grfext/grfext.sty
+INPUT c:/texlive/2025/texmf-dist/tex/latex/grfext/grfext.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT c:/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT c:/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
@@ -167,6 +179,9 @@ INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/ulasy.fd
@@ -180,6 +195,7 @@ INPUT c:/texlive/2025/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4r-0.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/inconsolata/t1-zi4r-0.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmb8t.vf
@@ -195,6 +211,8 @@ INPUT c:/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/latex-fonts/lasy9.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/latex-fonts/lasy5.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb8t.tfm
@@ -216,6 +234,13 @@ INPUT c:/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmb8t.vf
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/latex-fonts/lasy7.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT c:/texlive/2025/texmf-dist/tex/latex/mwe/example-image-golden.tex
 INPUT c:/texlive/2025/texmf-dist/tex/latex/mwe/example-image-golden.tex
 INPUT c:/texlive/2025/texmf-dist/tex/latex/mwe/example-image-golden.pdf
@@ -235,25 +260,25 @@ INPUT c:/texlive/2025/texmf-dist/tex/latex/mwe/example-image-b.pdf
 INPUT c:/texlive/2025/texmf-dist/tex/latex/mwe/example-image-b.pdf
 INPUT c:/texlive/2025/texmf-dist/tex/latex/mwe/example-image-b.pdf
 INPUT c:/texlive/2025/texmf-dist/tex/latex/mwe/example-image-b.pdf
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT ./main.bbl
 INPUT ./main.bbl
 INPUT main.bbl
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmri8t.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/latex-fonts/lasy7.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/vf/adobe/times/ptmri8t.vf
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb
+INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
+INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
+INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
+INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss17.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
