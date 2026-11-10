@@ -1,0 +1,60 @@
+\begin{thebibliography}{11}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Bosch et~al.(2012)Bosch, Janer, Fuhrmann, and Herrera}]{bosch2012irmas}
+Juan~J. Bosch, Jordi Janer, Ferdinand Fuhrmann, and Perfecto Herrera. 2012.
+\newblock A comparison of sound segregation techniques for predominant instrument recognition in musical audio signals.
+\newblock In \emph{Proceedings of the 13th International Society for Music Information Retrieval Conference}.
+
+\bibitem[{Engel et~al.(2017)Engel, Resnick, Roberts, Dieleman, Eck, Simonyan, and Norouzi}]{engel2017nsynth}
+Jesse Engel, Cinjon Resnick, Adam Roberts, Sander Dieleman, Douglas Eck, Karen Simonyan, and Mohammad Norouzi. 2017.
+\newblock Neural audio synthesis of musical notes with {WaveNet} autoencoders.
+\newblock In \emph{Proceedings of the 34th International Conference on Machine Learning}.
+
+\bibitem[{Eronen and Klapuri(2000)}]{eronen2000musical}
+Antti Eronen and Anssi Klapuri. 2000.
+\newblock Musical instrument recognition using cepstral coefficients and temporal features.
+\newblock In \emph{Proceedings of the IEEE International Conference on Acoustics, Speech, and Signal Processing}.
+
+\bibitem[{Han et~al.(2017)Han, Kim, and Lee}]{han2017deep}
+Yoonchang Han, Jaehun Kim, and Kyogu Lee. 2017.
+\newblock Deep convolutional neural networks for predominant instrument recognition in polyphonic music.
+\newblock \emph{IEEE/ACM Transactions on Audio, Speech, and Language Processing}, 25(1):208--221.
+
+\bibitem[{Herrera-Boyer et~al.(2003)Herrera-Boyer, Peeters, and Dubnov}]{herrera2003automatic}
+Perfecto Herrera-Boyer, Geoffroy Peeters, and Shlomo Dubnov. 2003.
+\newblock Automatic classification of musical instrument sounds.
+\newblock \emph{Journal of New Music Research}, 32(1):3--21.
+
+\bibitem[{Kong et~al.(2020)Kong, Cao, Iqbal, Wang, Wang, and Plumbley}]{kong2020panns}
+Qiuqiang Kong, Yin Cao, Turab Iqbal, Yuxuan Wang, Wenwu Wang, and Mark~D. Plumbley. 2020.
+\newblock {PANNs}: Large-scale pretrained audio neural networks for audio pattern recognition.
+\newblock \emph{IEEE/ACM Transactions on Audio, Speech, and Language Processing}, 28:2880--2894.
+
+\bibitem[{Mahanta et~al.(2021)Mahanta, Khilji, and Pakray}]{mahanta2021deep}
+Saranga~Kingkor Mahanta, Abdullah Faiz Ur~Rahman Khilji, and Partha Pakray. 2021.
+\newblock Deep neural network for musical instrument recognition using {MFCCs}.
+\newblock \emph{Computaci{\'o}n y Sistemas}, 25(2):351--360.
+
+\bibitem[{McFee et~al.(2015)McFee, Raffel, Liang, Ellis, McVicar, Battenberg, and Nieto}]{mcfee2015librosa}
+Brian McFee, Colin Raffel, Dawen Liang, Daniel P.~W. Ellis, Matt McVicar, Eric Battenberg, and Oriol Nieto. 2015.
+\newblock librosa: Audio and music signal analysis in python.
+\newblock In \emph{Proceedings of the 14th Python in Science Conference}, pages 18--25.
+
+\bibitem[{Park et~al.(2019)Park, Chan, Zhang, Chiu, Zoph, Cubuk, and Le}]{park2019specaugment}
+Daniel~S. Park, William Chan, Yu~Zhang, Chung-Cheng Chiu, Barret Zoph, Ekin~D. Cubuk, and Quoc~V. Le. 2019.
+\newblock {SpecAugment}: A simple data augmentation method for automatic speech recognition.
+\newblock In \emph{Proceedings of Interspeech}, pages 2613--2617.
+
+\bibitem[{{Philharmonia Orchestra}(n.d.)}]{philharmonia_samples}
+{Philharmonia Orchestra}. n.d.
+\newblock Sound samples.
+\newblock \url{https://philharmonia.co.uk/resources/sound-samples/}.
+\newblock Accessed: 2026-11-02.
+
+\bibitem[{Siebert(2016)}]{siebert2016robustness}
+Xavier Siebert. 2016.
+\newblock Study of the robustness of descriptors for musical instruments classification.
+\newblock In \emph{Proceedings of Benelearn 2016}.
+
+\end{thebibliography}
